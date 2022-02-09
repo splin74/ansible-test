@@ -1,0 +1,18 @@
+
+- hosts: testjdk
+ 
+  tasks:
+
+  - name : remove JAVA package
+    yum: name=java state=absent
+
+  - name : Install java-1.7 package
+    yum: name=java-1.7.0-openjdk state=present update_cache=true
+ 
+  - name: Correct java version selected to 1.7 need to install community.general.alternatives FIRST
+    community.general.alternatives:
+       name: java
+       path: /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.261-2.6.22.2.el7_8.x86_64/jre/bin/java
+
+
+
