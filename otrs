@@ -1,0 +1,9 @@
+Просмотр списка очереди сообщений
+
+su -c "/opt/otrs/bin/otrs.Console.pl Maint::Email::MailQueue --list" -s /bin/bash otrs
+Удаление сообщения
+
+su -c "/opt/otrs/bin/otrs.Console.pl Maint::Email::MailQueue --delete --filter ID::208455" -s /bin/bash otrs
+Удаление всех сообщений
+
+su -c "/opt/otrs/bin/otrs.Console.pl Maint::Email::MailQueue --delete-all" -s /bin/bash otrs
